@@ -18,4 +18,8 @@ class TestAnimal < MiniTest::Test
     assert_equal("mini-lop", @animal.breed())
   end
 
+  def test_ready_to_adopt()
+    assert_equal(true, @animal.ready_to_adopt())
+  end
+
 end
