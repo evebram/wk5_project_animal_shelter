@@ -14,12 +14,12 @@ class Owner
     sql = "INSERT INTO owners
            (
              owner_name
-           )
+            )
            VALUES
-           (
+            (
              $1
-           )
-           RETURNING *"
+            )
+            RETURNING *"
     values = [@owner_name]
     owner_data = SqlRunner.run(sql, values)
     @id = owner_data.first()['id'].to_i
