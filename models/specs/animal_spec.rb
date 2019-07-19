@@ -22,4 +22,12 @@ class TestAnimal < MiniTest::Test
     assert_equal(true, @animal.ready_to_adopt())
   end
 
+  def test_admission_date()
+    assert_equal(19, @animal.admission_date())
+  end
+
+  def test_owner_id()
+    assert_equal(3, @animal.owner_id())
+  end
+
 end

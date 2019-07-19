@@ -9,7 +9,9 @@ class Animal
     @id = options['id'].to_i
     @animal_name = options['animal_name']
     @breed = options['breed']
-    @ready_to_adopt = options['ready_to_adopt']
+    #how to define a boolean like this?
+    @ready_to_adopt = options['ready_to_adopt']||=false
+    #how to create a date in ruby?
     @admission_date = options['admission_date'].to_i
     @owner_id = options['owner_id'].to_i
   end
