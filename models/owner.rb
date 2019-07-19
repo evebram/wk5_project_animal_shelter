@@ -14,15 +14,22 @@ class Owner
     sql = "INSERT INTO owners
            (
              owner_name
-            )
+           )
            VALUES
-            (
+           (
              $1
-            )
+           )
             RETURNING *"
     values = [@owner_name]
     owner_data = SqlRunner.run(sql, values)
     @id = owner_data.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM owners"
+    owners = SqlRunner.run( sql )
+    result = owners.map { |owner| Owner.new(owner) }
+    return result
   end
 
 end

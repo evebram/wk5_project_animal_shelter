@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./owner.rb')
 
 class Animal
 
@@ -33,6 +34,13 @@ class Animal
   values = [@animal_name, @breed, @ready_to_adopt, @admission_date, @owner_id]
   animal_data = SqlRunner.run(sql, values)
   @id = animal_data.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM animals"
+    animals = SqlRunner.run( sql )
+    result = animals.map { |animal| Animal.new(animal) }
+    return result
   end
 
 end
