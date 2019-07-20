@@ -4,7 +4,7 @@ require_relative('../animal.rb')
 class TestAnimal < MiniTest::Test
 
   def setup()
-    options = {"id" => 1, "animal_name" => "Michelangelo", "breed" => "mini-lop", "ready_to_adopt" => true, "admission_date" => 19, "owner_id" => 3}
+    options = {"id" => 1, "animal_name" => "Michelangelo", "breed" => "mini-lop", "ready_to_adopt" => true, "admission_date" => "10.06.2019", "owner_id" => 3}
 
     @animal = Animal.new(options)
   end
@@ -23,7 +23,7 @@ class TestAnimal < MiniTest::Test
   end
 
   def test_admission_date()
-    assert_equal(19, @animal.admission_date())
+    assert_equal("10.06.2019", @animal.admission_date())
   end
 
   def test_owner_id()

@@ -10,7 +10,7 @@ animal1 = Animal.new({
   "animal_name" => "Michelangelo",
   "breed" => "mini-lop",
   "ready_to_adopt" => true,
-  "admission_date" => 11,
+  "admission_date" => '12.07.2019',
   "owner_id" => owner1.id,
   })
 animal1.save()
