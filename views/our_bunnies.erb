@@ -1,0 +1,14 @@
+<% @animals.each do |animal| %>
+ <p>Name: <%= animal.animal_name %></p>
+ <p>Breed: <%= animal.breed %></p>
+ <p>Admission date: <%= animal.admission_date %></p>
+ <p>Adoption status: <%= animal.ready_to_adopt %></p>
+
+
+<% @students.each do |student|  %>
+  <p>Name: <%= student.first_name %> <%= student.last_name %></p>
+  <p>House: <%= student.house %></p>
+  <p>Age: <%= student.age %></p>
+  <p><a href="/students/<%= student.id %>">Show Student</a></p>
+  <hr />
+<% end %>

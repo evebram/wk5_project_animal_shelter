@@ -71,7 +71,7 @@ class Animal
   def adopted_animals()
     sql = "SELECT * FROM animals
            WHERE owners_id = $1"
-    values = (@owners_id)
+    values = (@owner_id)
     animal_data = SqlRunner.run(sql, values)
     animal = Animal.map_item(animal_data)
     return animal
@@ -80,7 +80,7 @@ class Animal
   def animals_to_adopt()
     sql = "SELECT * FROM animals
            WHERE owners_id = NULL"
-    values = (@owners_id)
+    values = (@owner_id)
     animal_data = SqlRunner.run(sql, values)
     animal = Animal.map_item(animal_data)
     return animal

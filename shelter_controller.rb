@@ -12,4 +12,12 @@ get '/rabbit-rescue' do
 end
 
 #SHOW
-get '/rabbit-rescue/'
+get '/rabbit-rescue/our-bunnies' do
+  @animals = Animal.all()
+  erb(:our_bunnies)
+end
+
+get '/rabbit-rescue/adopted-bunnies' do
+  @animals = Animal.all()
+  erb(:adopted_bunnies)
+end
