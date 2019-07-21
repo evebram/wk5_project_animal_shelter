@@ -32,4 +32,13 @@ class Owner
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM owners
+           WHERE id = $1"
+    values = [@id]
+    owners = SqlRunner.run(sql, values)
+    result = Owners.new(owner.first)
+    return result
+  end
+
 end
