@@ -1,1 +1,11 @@
 <h1>Welcome</h1>
+
+<% @animals.each do |animal| %>
+ <p>Name: <%= animal.animal_name %></p>
+ <p>Breed: <%= animal.breed %></p>
+ <p>Admission date: <%= animal.admission_date %></p>
+ <p>Adoption status: <%= animal.ready_to_adopt %></p>
+ <p><a href="/rabbit-rescue/our-bunnies/update_bunny/<%= animal.id %>">Update Bunny</a></p>
+ <hr />
+
+ <% end %>

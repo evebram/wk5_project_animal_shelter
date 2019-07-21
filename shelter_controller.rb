@@ -8,13 +8,20 @@ also_reload( './models/*')
 
 #INDEX
 get '/rabbit-rescue' do
+  @animals = Animal.all()
   erb(:index)
 end
 
 #SHOW
-get '/rabbit-rescue/our-bunnies' do
-  @animals = Animal.all()
+get '/rabbit-rescue/:id' do
+  @animals = Animal.find(params[:id])
   erb(:our_bunnies)
+end
+
+#EDIT
+get 'rabbit-rescue/:id/update' do
+  @animals = Animal.find(params[:id])
+  erb(:update_bunny)
 end
 
 get '/rabbit-rescue/adopted-bunnies' do
