@@ -77,4 +77,13 @@ class Animal
     return animal
   end
 
+  def animals_to_adopt()
+    sql = "SELECT * FROM animals
+           WHERE owners_id = NULL"
+    values = (@owners_id)
+    animal_data = SqlRunner.run(sql, values)
+    animal = Animal.map_item(animal_data)
+    return animal
+  end
+
 end
