@@ -18,28 +18,37 @@ class Animal
   end
 
   def save()
-  sql = "INSERT INTO animals
-         (
-           animal_name,
-           breed,
-           ready_to_adopt,
-           admission_date,
-           owner_id
-          )
-         VALUES
-         (
-           $1, $2, $3, $4, $5
-           )
-           RETURNING *"
-  values = [@animal_name, @breed, @ready_to_adopt, @admission_date, @owner_id]
-  animal_data = SqlRunner.run(sql, values)
-  @id = animal_data.first()['id'].to_i
+    sql = "INSERT INTO animals
+           (
+             animal_name,
+             breed,
+             ready_to_adopt,
+             admission_date,
+             owner_id
+            )
+           VALUES
+           (
+             $1, $2, $3, $4, $5
+             )
+             RETURNING *"
+    values = [@animal_name, @breed, @ready_to_adopt, @admission_date, @owner_id]
+    animal_data = SqlRunner.run(sql, values)
+    @id = animal_data.first()['id'].to_i
   end
 
   def self.all()
     sql = "SELECT * FROM animals"
     animals = SqlRunner.run( sql )
     result = animals.map { |animal| Animal.new(animal) }
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM animals
+           WHERE id = $1"
+    values = [@id]
+    animals = SqlRunner.run(sql, values)
+    result = Animal.new(animal.first)
     return result
   end
 
