@@ -1,0 +1,39 @@
+<form method="post" action="/rabbit-rescue/<%= @animal.id %>">
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="animal_name"
+  id="name-field"
+  value="<%= @animal.animal_name %>"
+  />
+
+  <label for="breed-field">Breed:</label>
+  <input
+  type="text"
+  name="animal_breed"
+  id="breed-field"
+  value="<%= @animal.breed %>"
+  />
+
+  <label for="admission-date-field">Breed:</label>
+  <input
+  type="text"
+  name="admission_date"
+  id="admission-date-field"
+  value="<%= @animal.admission_date %>"
+  />
+
+  <label for="adoption-status">Ready for adoption?</label>
+  <select name="status" id="adoption-status">
+    <option
+    value="Yes"
+    <%= "selected" if @animal.ready_to_adopt == "Yes" %>
+    >Yes</option>
+    <option
+    value="No"
+    <%= "selected" if @animal.ready_to_adopt == "No" %>
+    >No</option>
+  </select>
+
+  <input type='submit' value="Edit Order">
+</form>
