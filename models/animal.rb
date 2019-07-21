@@ -68,4 +68,13 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
+  def adopted_animals()
+    sql = "SELECT * FROM animals
+           WHERE owners_id = $1"
+    values = (@owners_id)
+    animal_data = SqlRunner.run(sql, values)
+    animal = Animal.map_item(animal_data)
+    return animal
+  end
+
 end
