@@ -26,26 +26,26 @@
 
   <label for="adoption-status">Ready for adoption?</label>
   <select name="status" id="adoption-status">
-    <option
-    value="Yes"
-    <%= "selected" if @animal.ready_to_adopt == "Yes" %>
-    >Yes</option>
-    <option
-    value="No"
-    <%= "selected" if @animal.ready_to_adopt == "No" %>
-    >No</option>
+    <% if @animal.ready_to_adopt == true %>
+    <option value="Yes" selected>Yes</option>
+    <option value="No">No</option>
+    <% else %>
+    <option value="Yes">Yes</option>
+    <option value="No" selected>No</option>
+    <% end %>
   </select>
 
   <label for="assign-owner">Owner</label>
-  <select name="owner_id" id="assign-owner" selected="<%= @animal.owner_id %>">
-    <% @owners.each do |owner| %>
-      <% if owner.id == @animal.owner_id %>
-        <option value=<%= owner.id %> selected><%=owner.owner_name %></option>
-      <% else %>
-        <<<option value=<%= owner.id %>><%= owner.owner_name %></option>
-      <% end %>
-    <% end %>
-    </select>
+   <select name="owner_id" id="assign-owner">
+     <% @owners.each do |owner| %>
+       <% if owner.id == @animal.owner_id %>
+         <option value=<%= owner.id %> selected><%=owner.owner_name %></option>
+       <% else %>
+         <option value=<%= owner.id %>><%= owner.owner_name %></option>
+       <% end %>
+     <% end %>
+     <option value="None" <%= "selected" if @animal.owner_id == 0 %>>None</option>
+     </select>
 
 
   <input type='submit' value="Update">
