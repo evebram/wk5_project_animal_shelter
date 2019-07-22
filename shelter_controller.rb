@@ -12,21 +12,19 @@ get '/rabbit-rescue' do
   erb(:index)
 end
 
-#EDIT
-get 'rabbit-rescue/:id/update' do
-  @animal = Animal.find(params[:id])
-  erb(:update_bunny)
-end
-
 #SHOW
 get '/rabbit-rescue/:id' do
   @animal = Animal.find(params[:id])
-  erb(:show_bunny)
+  erb(:show_animal)
 end
 
-
+#EDIT
+get 'rabbit-rescue/:id/update' do
+  @animal = Animal.find(params[:id])
+  erb(:update_animal)
+end
 
 get '/rabbit-rescue/adopted-bunnies' do
   @animals = Animal.all()
-  erb(:adopted_bunnies)
+  erb(:adopted_animals)
 end
