@@ -29,7 +29,7 @@ end
 post '/rabbit-rescue/:id' do
   animal = Animal.new(params)
   animal.update
-  redirect to '/rabbit-rescue/:id'
+  redirect to "/rabbit-rescue/#{params['id']}"
 end
 
 #DELETE
