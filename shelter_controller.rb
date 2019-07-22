@@ -24,6 +24,12 @@ get '/rabbit-rescue/:id/update' do
   erb(:update_animal)
 end
 
+#UPDATE
+post '/rabbit-rescue/:id' do
+  Animal.new(params).update
+  redirect to '/rabbit-rescue'
+end
+
 #DELETE
 post '/rabbit-rescue/:id/delete' do
   animal = Animal.find(params['id'])
