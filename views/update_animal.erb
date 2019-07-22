@@ -1,3 +1,4 @@
+<h2>Update <%= @animal.animal_name %></h2>
 <form method="post" action="/rabbit-rescue/<%= @animal.id %>">
   <label for="name-field">Name:</label>
   <input
@@ -35,5 +36,5 @@
     >No</option>
   </select>
 
-  <input type='submit' value="Edit Order">
+  <input type='submit' value="Update">
 </form>

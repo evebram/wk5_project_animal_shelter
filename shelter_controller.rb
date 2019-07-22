@@ -14,17 +14,27 @@ end
 
 #SHOW
 get '/rabbit-rescue/:id' do
-  @animal = Animal.find(params[:id])
-  erb(:show_animal)
+  @animal = Animal.find(params['id'])
+  erb(:show)
 end
 
 #EDIT
-get 'rabbit-rescue/:id/update' do
-  @animal = Animal.find(params[:id])
+get '/rabbit-rescue/:id/update' do
+  @animal = Animal.find(params['id'])
   erb(:update_animal)
 end
 
-get '/rabbit-rescue/adopted-bunnies' do
+#DELETE
+post '/rabbit-rescue/:id/delete' do
+  animal = Animal.find(params['id'])
+  animal.delete
+  redirect to '/rabbit-rescue'
+end
+
+get '/rabbit-rescue/adopted' do
   @animals = Animal.all()
   erb(:adopted_animals)
 end
+
+# binding.pry
+# nil
