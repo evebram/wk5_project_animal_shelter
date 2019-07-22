@@ -1,3 +1,4 @@
+<% require('pry-byebug') %>
 <h2>Update <%= @animal.animal_name %></h2>
 <form method="post" action="/rabbit-rescue/<%= @animal.id %>">
   <label for="name-field">Name:</label>
@@ -26,13 +27,13 @@
 
   <label for="adoption-status">Ready for adoption?</label>
   <select name="status" id="adoption-status">
-    <% if @animal.ready_to_adopt == true %>
-    <option value="Yes" selected>Yes</option>
-    <option value="No">No</option>
-    <% else %>
-    <option value="Yes">Yes</option>
-    <option value="No" selected>No</option>
-    <% end %>
+      <% if @animal.ready_to_adopt ==  "t"%>
+      <option value="Yes" selected>Yes</option>
+      <option value="No">No</option>
+      <% else %>
+      <option value="Yes">Yes</option>
+      <option value="No" selected>No</option>
+      <% end %>
   </select>
 
   <label for="assign-owner">Owner</label>
