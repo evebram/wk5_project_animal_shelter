@@ -12,6 +12,16 @@ get '/rabbit-rescue' do
   erb(:index)
 end
 
+#NEW BUNNY
+get '/rescue-rabbit/register-bunny' do
+  erb(:register_animal)
+end
+
+#NEW OWNER
+get '/rescue-rabbit/register-owner' do
+  erb(:register_owner)
+end
+
 #SHOW
 get '/rabbit-rescue/:id' do
   @animal = Animal.find(params['id'])
