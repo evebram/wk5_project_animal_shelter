@@ -39,10 +39,10 @@
   <label for="adoption-status">Owner</label>
   <select name="status" id="adoption-status">
     <option value="None"
-    <%= "selected" if @animal.owner_id == nil %>
+    <%= "selected" if @animal.owner_id == "" %>
     >None</option>
     <option value="Trish"
-    <%= "selected" if @animal.owner_id == "Eve" %>
+    <%= "selected" if @animal.owner_id ==  %>
     >Trish</option>
     <option value="Joseph"
     <%= "selected" if @animal.owner_id == "Eve" %>

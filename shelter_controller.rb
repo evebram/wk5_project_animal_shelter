@@ -20,6 +20,7 @@ end
 
 #EDIT
 get '/rabbit-rescue/:id/update' do
+  @owners = Owners.all
   @animal = Animal.find(params['id'])
   erb(:update_animal)
 end

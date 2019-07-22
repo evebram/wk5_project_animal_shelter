@@ -57,7 +57,7 @@ animal3 = Animal.new({
   "breed" => "flemish giant",
   "ready_to_adopt" => false,
   "admission_date" => '06.05.2019',
-  "owner_id" => nil,
+  "owner_id" => "",
   })
 animal3.save()
 
@@ -93,7 +93,7 @@ animal7 = Animal.new({
   "breed" => "mini-lop",
   "ready_to_adopt" => true,
   "admission_date" => '21.05.2019',
-  "owner_id" => nil,
+  "owner_id" => "",
   })
 animal7.save()
 
@@ -102,7 +102,7 @@ animal8 = Animal.new({
   "breed" => "netherlands dwarf",
   "ready_to_adopt" => false,
   "admission_date" => '01.06.2019',
-  "owner_id" => nil,
+  "owner_id" => "",
   })
 animal8.save()
 
@@ -111,7 +111,7 @@ animal9 = Animal.new({
   "breed" => "angora",
   "ready_to_adopt" => false,
   "admission_date" => '25.05.2019',
-  "owner_id" => nil,
+  "owner_id" => "",
   })
 animal9.save()
 
@@ -120,7 +120,7 @@ animal10 = Animal.new({
   "breed" => "Californian",
   "ready_to_adopt" => true,
   "admission_date" => '15.06.2019',
-  "owner_id" => nil,
+  "owner_id" => "",
   })
 animal10.save()
 
@@ -129,6 +129,6 @@ animal11 = Animal.new({
   "breed" => "Dutch",
   "ready_to_adopt" => false,
   "admission_date" => '10.07.2019',
-  "owner_id" => nil,
+  "owner_id" => "",
   })
 animal11.save()
