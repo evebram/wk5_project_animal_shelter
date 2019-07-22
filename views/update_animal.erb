@@ -36,30 +36,17 @@
     >No</option>
   </select>
 
-  <label for="adoption-status">Owner</label>
-  <select name="status" id="adoption-status">
-    <option value="None"
-    <%= "selected" if @animal.owner_id == "" %>
-    >None</option>
-    <option value="Trish"
-    <%= "selected" if @animal.owner_id ==  %>
-    >Trish</option>
-    <option value="Joseph"
-    <%= "selected" if @animal.owner_id == "Eve" %>
-    >Joseph</option>
-    <option value="Bruno"
-    <%= "selected" if @animal.owner_id == "Eve" %>
-    >Bruno</option>
-    <option value="Erin"
-    <%= "selected" if @animal.owner_id == "Eve" %>
-    >Erin</option>
-    <option value="Kathryn"
-    <%= "selected" if @animal.owner_id == "Eve" %>
-    >Kathryn</option>
-    <option value="Johnny"
-    <%= "selected" if @animal.owner_id == "Eve" %>
-    >Johnny</option>
-  </select>
+  <label for="assign-owner">Owner</label>
+  <select name="owner_id" id="assign-owner" selected="<%= @animal.owner_id %>">
+    <% @owners.each do |owner| %>
+      <% if owner.id == @animal.owner_id %>
+        <option value=<%= owner.id %> selected><%=owner.owner_name %></option>
+      <% else %>
+        <<<option value=<%= owner.id %>><%= owner.owner_name %></option>
+      <% end %>
+    <% end %>
+    </select>
+
 
   <input type='submit' value="Update">
 </form>
