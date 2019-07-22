@@ -13,12 +13,19 @@ get '/rabbit-rescue' do
 end
 
 #NEW BUNNY
-get '/rescue-rabbit/register-bunny' do
+get '/rabbit-rescue/register-bunny' do
   erb(:register_animal)
 end
 
+#CREATE BUNNY
+post '/rabbit-rescue' do
+  @animal = Animal.new(params)
+  @animal.save()
+  redirect to '/rabbit-rescue'
+end
+
 #NEW OWNER
-get '/rescue-rabbit/register-owner' do
+get '/rabbit-rescue/register-owner' do
   erb(:register_owner)
 end
 
