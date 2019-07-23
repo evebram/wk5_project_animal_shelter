@@ -25,13 +25,13 @@
   />
 
   <label for="adoption-status">Ready for adoption?</label>
-  <select name="status" id="adoption-status">
+  <select name="ready_to_adopt" id="adoption-status">
       <% if @animal.ready_to_adopt ==  "t"%>
-      <option value="Yes" selected>Yes</option>
-      <option value="No">No</option>
+      <option value="t" selected>Yes</option>
+      <option value="f">No</option>
       <% else %>
-      <option value="Yes">Yes</option>
-      <option value="No" selected>No</option>
+      <option value="t">Yes</option>
+      <option value="f" selected>No</option>
       <% end %>
   </select>
 

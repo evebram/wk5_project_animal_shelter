@@ -1,8 +1,9 @@
 require_relative('../models/owner.rb')
 require_relative('../models/animal.rb')
 
-Owner.delete_all()
 Animal.delete_all()
+Owner.delete_all()
+#retry seed nonsense
 
 owner1 = Owner.new({
   "owner_name" => "Trish"

@@ -1,7 +1,7 @@
 <% #require('pry-byebug') %>
 
 <% @animals.each do |animal|  %>
-  <% if animal.ready_to_adopt == "t" %>
+  <% if animal.ready_to_adopt == "t" && animal.owner_id == nil%>
     <p>Name: <%= animal.animal_name %></p>
     <p>Breed: <%= animal.breed %></p>
     <p>Admission date: <%= animal.admission_date %></p>
