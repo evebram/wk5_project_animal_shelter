@@ -1,5 +1,8 @@
-p>Name: <%= @animal.animal_name %></p>
+<% require('pry-byebug') %>
+<% @animals.each do |animal| %> <% binding.pry %>
+
+<p>Name: <%= @animal.animal_name %></p>
 <p>Breed: <%= @animal.breed %></p>
 <p>Admission date: <%= @animal.admission_date %></p>
 
-<% @animal. %>
+<% end %>

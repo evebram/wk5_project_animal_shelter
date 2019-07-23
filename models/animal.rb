@@ -52,7 +52,7 @@ class Animal
     animal = SqlRunner.run(sql, values)
     result = Animal.new(animal.first)
     return result
-  end  
+  end
 
   def update()
     sql = "UPDATE animals
@@ -70,10 +70,10 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
-  def adopted_animals()
+  def self.find_adopted(id)
     sql = "SELECT * FROM animals
-           WHERE owners_id = $1"
-    values = (@owner_id)
+           WHERE owner_id = $1"
+    values = [id]
     animal_data = SqlRunner.run(sql, values)
     animal = Animal.map_item(animal_data)
     return animal

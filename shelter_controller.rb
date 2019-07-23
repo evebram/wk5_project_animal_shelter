@@ -15,15 +15,10 @@ end
 #SHOW OWNERS
 get '/rabbit-rescue/owners' do
   @owners = Owner.all()
+  @animals = Animal.find_adopted(params['id'])
   erb(:owners)
 end
 
-#ADOPTION HISTORY
-get '/rabbit-rescue/owners/:id' do
-  @owner = Owner.find(params['id'])
-  @animal = Animal.find_adopted(params['id'])
-  erb(:adopted)
-end
 
 #NEW BUNNY
 get '/rabbit-rescue/register-bunny' do
