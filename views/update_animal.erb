@@ -8,13 +8,22 @@
   value="<%= @animal.animal_name %>"
   />
 
-  <label for="breed-field">Breed:</label>
-  <input
-  type="text"
-  name="breed"
-  id="breed-field"
-  value="<%= @animal.breed %>"
-  />
+  <label for="breed-field">Select breed:</label>
+    <select name="breed" id="breed-field">
+      <option value="Angora" <%= selected if @animal.breed == "Angora" %>>Angora</option>
+      <option value="Belgian Hare" <%= selected if @animal.breed == "Belgian Hare" %>>Belgian Hare</option>
+      <option value="Californian" <%= selected if @animal.breed == "Californian" %>>Californian</option>
+      <option value="Continental Giant" <%= selected if @animal.breed == "Continental Giant" %>>Continental Giant</option>
+      <option value="Dutch" <%= selected if @animal.breed == "Dutch" %>>Dutch</option>
+      <option value="English Lop" <%= selected if @animal.breed == "English Lop" %>>English Lop</option>
+      <option value="Flemish Giant" <%= selected if @animal.breed == "Flemish Giant" %>>Flemish Giant</option>
+      <option value="French Lop" <%= selected if @animal.breed == "French Lop" %>>French Lop</option>
+      <option value="Harlequin" <%= selected if @animal.breed == "Harlequin" %>>Harlequin</option>
+      <option value="Lionhead" <%= selected if @animal.breed == "Lionhead" %>>Lionhead</option>
+      <option value="Mini-lop" <%= selected if @animal.breed == "Mini-lop" %>>Mini-lop</option>
+      <option value="Netherland Dwarf" <%= selected if @animal.breed == "Netherland Dwarf" %>>Netherland Dwarf</option>
+      <option value="Rex" <%= selected if @animal.breed == "Rex" %>>Rex</option>
+    </select>
 
   <label for="admission-date-field">Admission date:</label>
   <input
