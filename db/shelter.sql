@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS owners;
 
 CREATE TABLE owners(
   id SERIAL4 PRIMARY KEY,
-  owner_name VARCHAR(255)
+  first_name VARCHAR(255),
+  last_name VARCHAR(255)
 );
 
 CREATE TABLE animals(

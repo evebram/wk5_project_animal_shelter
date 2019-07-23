@@ -30,6 +30,12 @@ get '/rabbit-rescue/not-ready' do
   erb(:not_adoptable)
 end
 
+#SHOW BY BREED
+get '/rabbit-rescue/by-breed' do
+  @animals = Animal.find_by_breed(params['breed'])
+  erb(:breed)
+end
+
 #NEW BUNNY
 get '/rabbit-rescue/register-bunny' do
   erb(:register_animal)

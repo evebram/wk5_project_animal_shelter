@@ -6,32 +6,38 @@ Owner.delete_all()
 #retry seed nonsense
 
 owner1 = Owner.new({
-  "owner_name" => "Trish"
+  "first_name" => "Trish",
+  "last_name" => "Una"
   })
 owner1.save()
 
 owner2 = Owner.new({
-  "owner_name" => "Joseph"
+  "first_name" => "Robert",
+  "last_name" => "Speedwagon"
   })
 owner2.save()
 
 owner3 = Owner.new({
-  "owner_name" => "Bruno"
+  "first_name" => "Daniel",
+  "last_name" => "D'Arby"
   })
 owner3.save()
 
 owner4 = Owner.new({
-  "owner_name" => "Erin"
+  "first_name" => "Erina",
+  "last_name" => "Pendleton"
   })
 owner4.save()
 
 owner5 = Owner.new({
-  "owner_name" => "Kathryn"
+  "first_name" => "Suzi",
+  "last_name" => "Quatro"
   })
 owner5.save()
 
 owner6 = Owner.new({
-  "owner_name" => "Johnny"
+  "first_name" => "Will",
+  "last_name" => "Zeppeli"
   })
 owner6.save()
 

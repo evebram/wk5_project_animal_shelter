@@ -1,0 +1,32 @@
+<form method="post" action="/rabbit-rescue/by-breed">
+
+  <label for="breed-field">Select breed:</label>
+    <select name="breed" id="breed-field">
+      <option value="Angora">Angora</option>
+      <option value="Belgian Hare">Belgian Hare</option>
+      <option value="Californian">Californian</option>
+      <option value="Continental Giant">Continental Giant</option>
+      <option value="Dutch">Dutch</option>
+      <option value="English Lop">English Lop</option>
+      <option value="Flemish Giant">Flemish Giant</option>
+      <option value="French Lop">French Lop</option>
+      <option value="Harlequin">Harlequin</option>
+      <option value="Lionhead">Lionhead</option>
+      <option value="Mini-lop">Mini-lop</option>
+      <option value="Netherland Dwarf">Netherland Dwarf</option>
+      <option value="Rex">Rex</option>
+    </select>
+
+  <input type='submit' value='Find by Breed' name='breed'>
+</form>
+
+<% @animals.each do |animal| %>
+  <% if animal.breed == 'breed' %>
+   <p>Name: <%= animal.animal_name %></p>
+   <p>Breed: <%= animal.breed %></p>
+   <p><a href="/rabbit-rescue/<%= animal.id %>">View Bunny</a></p>
+   <% else %>
+   <p>Sorry, there are no bunnies of this breed available.</p>
+  <% end %>
+  <% end %>
+   <hr />

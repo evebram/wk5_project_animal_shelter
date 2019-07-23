@@ -79,6 +79,16 @@ class Animal
     return result
   end
 
+  def self.find_by_breed(breed)
+    sql = "SELECT * FROM animals
+          WHERE breed = $1"
+    values = [breed]
+    animals = SqlRunner.run(sql, values)
+    result = animals.map { |animal| Animal.new(animal) }
+    # animal_breeds = result.map { |animal| animal.breed}
+    return result #animal_breeds
+  end
+
   # def not_ready()
   #   sql = "SELECT * FROM animals
   #         WHERE ready_to_adopt = $1"
