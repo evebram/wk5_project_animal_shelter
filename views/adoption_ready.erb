@@ -1,3 +1,5 @@
+<% #require('pry-byebug') %>
+
 <% @animals.each do |animal|  %>
   <% if animal.ready_to_adopt == "t" %>
     <p>Name: <%= animal.animal_name %></p>
@@ -6,3 +8,5 @@
   <hr />
   <% end %>
 <% end %>
+<% #binding.pry %>
+<% nil %>

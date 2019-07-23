@@ -18,7 +18,7 @@ get '/rabbit-rescue/owners' do
   erb(:owners)
 end
 
-#SHOW READY TO ADOPT#
+#SHOW READY TO ADOPT
 get '/rabbit-rescue/ready-to-adopt' do
   @animals = Animal.animal_ready(true)
   erb(:adoption_ready)
