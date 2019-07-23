@@ -15,7 +15,6 @@ end
 #SHOW OWNERS
 get '/rabbit-rescue/owners' do
   @owners = Owner.all()
-  @animals = Animal.find_adopted(params['id'])
   erb(:owners)
 end
 

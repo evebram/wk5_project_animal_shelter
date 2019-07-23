@@ -45,8 +45,9 @@ class Owner
     sql = "SELECT * FROM animals
            WHERE owner_id = $1"
     values = [@id]
-    animal_data = SqlRunner.run(sql, values)
-    return Animal.map_items(animal_data)
+    animals = SqlRunner.run(sql, values)
+    result = animals.map { |animal| Animal.new(animal) }
+    return result
   end
 
   def self.delete_all()
