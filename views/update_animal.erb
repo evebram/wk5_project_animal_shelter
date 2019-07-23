@@ -12,7 +12,7 @@
   <label for="breed-field">Breed:</label>
   <input
   type="text"
-  name="animal_breed"
+  name="breed"
   id="breed-field"
   value="<%= @animal.breed %>"
   />
@@ -45,7 +45,7 @@
          <option value=<%= owner.id %>><%= owner.owner_name %></option>
        <% end %>
      <% end %>
-     <option value="None" <%= "selected" if @animal.owner_id == 0 %>>None</option>
+     <option value="" <%= "selected" if @animal.owner_id == 0 %>>None</option>
      </select>
 
 

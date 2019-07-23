@@ -12,6 +12,19 @@ get '/rabbit-rescue' do
   erb(:index)
 end
 
+#SHOW OWNERS
+get '/rabbit-rescue/owners' do
+  @owners = Owner.all()
+  erb(:owners)
+end
+
+#ADOPTION HISTORY
+get '/rabbit-rescue/owners/:id' do
+  @owner = Owner.find(params['id'])
+  @animal = Animal.find_adopted(params['id'])
+  erb(:adopted)
+end
+
 #NEW BUNNY
 get '/rabbit-rescue/register-bunny' do
   erb(:register_animal)
@@ -21,7 +34,7 @@ end
 post '/rabbit-rescue' do
   @animal = Animal.new(params)
   @animal.save()
-  redirect to '/rabbit-rescue'
+  erb(:create)
 end
 
 #NEW OWNER
@@ -53,7 +66,7 @@ end
 post '/rabbit-rescue/:id/delete' do
   animal = Animal.find(params['id'])
   animal.delete
-  redirect to '/rabbit-rescue/'
+  redirect to '/rabbit-rescue'
 end
 
 get '/rabbit-rescue/adopted' do

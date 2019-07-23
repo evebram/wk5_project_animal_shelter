@@ -1,0 +1,9 @@
+<% @owners.each do |owner| %>
+
+<p>Name: <%= owner.owner_name %></p>
+<p><a href="/rabbit-rescue/owners/<%= owner.id %>">Adoption History</a></p>
+<form method="post" action="/rabbit-rescue/<%= owner.id %>/delete">
+  <input type="submit" value="Delete Entry"/>
+</form>
+
+<% end %>

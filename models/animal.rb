@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('./owner.rb')
+require('pry-byebug')
 
 class Animal
 
@@ -14,7 +15,8 @@ class Animal
     @ready_to_adopt = options['ready_to_adopt']||=false
     #how to create a date in ruby?
     @admission_date = options['admission_date']
-    @owner_id = options['owner_id'].to_i
+    @owner_id = options['owner_id'].to_i unless !options['owner_id'] || options['owner_id'].empty?
+    #to_i does weird things to seeds.rb
   end
 
   def save()
@@ -50,7 +52,7 @@ class Animal
     animal = SqlRunner.run(sql, values)
     result = Animal.new(animal.first)
     return result
-  end
+  end  
 
   def update()
     sql = "UPDATE animals

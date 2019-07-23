@@ -37,8 +37,17 @@ class Owner
            WHERE id = $1"
     values = [@id]
     owners = SqlRunner.run(sql, values)
-    result = Owners.new(owner.first)
+    result = Owner.new(owner.first)
     return result
+  end
+
+  def self.find_adopted()
+    sql = "SELECT * FROM animals
+           WHERE owner_id = $1"
+    values = [@id]
+    animal_data = SqlRunner.run(sql, values)
+    animal = Animal.map_item(animal_data)
+    return animal
   end
 
   def self.delete_all()
