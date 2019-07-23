@@ -18,6 +18,17 @@ get '/rabbit-rescue/owners' do
   erb(:owners)
 end
 
+#SHOW READY TO ADOPT#
+get '/rabbit-rescue/ready_to_adopt' do
+  @animals = Animal.animals_to_adopt()
+  erb(:adoption_ready)
+end
+
+#SHOW NOT READY FOR ADOPTION
+get '/rabbit-rescue/not-ready' do
+  @animals = Animal.animals_not_ready()
+  erb(:not_adoptable)
+end
 
 #NEW BUNNY
 get '/rabbit-rescue/register-bunny' do
