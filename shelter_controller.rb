@@ -19,14 +19,14 @@ get '/rabbit-rescue/owners' do
 end
 
 #SHOW READY TO ADOPT#
-get '/rabbit-rescue/ready_to_adopt' do
-  @animals = Animal.animals_to_adopt()
+get '/rabbit-rescue/ready-to-adopt' do
+  @animals = Animal.animal_ready(true)
   erb(:adoption_ready)
 end
 
 #SHOW NOT READY FOR ADOPTION
 get '/rabbit-rescue/not-ready' do
-  @animals = Animal.animals_not_ready()
+  @animals = Animal.animal_ready(false)
   erb(:not_adoptable)
 end
 

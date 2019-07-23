@@ -70,18 +70,18 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
-  def animals_to_adopt()
+  def self.animal_ready(ready_to_adopt)
     sql = "SELECT * FROM animals
-           WHERE ready_to_adopt = 't'"
+           WHERE ready_to_adopt = $1"
     values = [@ready_to_adopt]
-    animal_data = SqlRunner.run(sql, values)
-    animal = Animal.map_item(animal_data)
-    return animal
+    animals = SqlRunner.run(sql, values)
+    result = animals.map { |animal| Animal.new(animal) }
+    return result
   end
 
-  def animals_not_ready()
+  def not_ready()
     sql = "SELECT * FROM animals
-          WHERE ready_to_adopt = 'f'"
+          WHERE ready_to_adopt = $1"
     values = [@ready_to_adopt]
     animal_data = SqlRunner.run(sql, values)
     animal = Animal.map_item(animal_data)
