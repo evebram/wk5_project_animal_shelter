@@ -1,13 +1,17 @@
 <h2>Update <%= @animal.animal_name %></h2>
 <form method="post" action="/rabbit-rescue/<%= @animal.id %>">
-  <label for="name-field">Name:</label>
+  <div class="form-wrap">
+
+  <div class="form-item">
+  <label for="name-field">Name:</label><br>
   <input
   type="text"
   name="animal_name"
   id="name-field"
-  value="<%= @animal.animal_name %>"
-  />
+  value="<%= @animal.animal_name %>"/>
+  </div>
 
+  <div class="form-item">
   <label for="breed-field">Select breed:</label>
     <select name="breed" id="breed-field">
       <option value="Angora" <%= "selected" if @animal.breed == "Angora" %>>Angora</option>
@@ -24,23 +28,27 @@
       <option value="Netherland Dwarf" <%= "selected" if @animal.breed == "Netherland Dwarf" %>>Netherland Dwarf</option>
       <option value="Rex" <%= "selected" if @animal.breed == "Rex" %>>Rex</option>
     </select>
+    </div>
 
+    <div class="form-item">
     <label for="age-field">Age:</label>
     <input
     type="text"
     name="age"
     id="age-field"
-    value="<%= @animal.age %>"
-    />
+    value="<%= @animal.age %>"/>
+    </div>
 
+  <div class="form-item">
   <label for="admission-date-field">Admission date:</label>
   <input
   type="text"
   name="admission_date"
   id="admission-date-field"
-  value="<%= @animal.admission_date %>"
-  />
+  value="<%= @animal.admission_date %>"/>
+  </div>
 
+  <div class="form-item">
   <label for="adoption-status">Ready for adoption?</label>
   <select name="ready_to_adopt" id="adoption-status">
       <% if @animal.ready_to_adopt ==  "t"%>
@@ -51,7 +59,9 @@
       <option value="f" selected>No</option>
       <% end %>
   </select>
+  </div>
 
+  <div class="form-item">
   <label for="assign-owner">Owner</label>
    <select name="owner_id" id="assign-owner">
      <% @owners.each do |owner| %>
@@ -63,15 +73,19 @@
      <% end %>
      <option value="" <%= "selected" if @animal.owner_id == nil %>>None</option>
      </select>
+     </div>
 
+     <div class="form-item">
      <label for="image-field">Image:</label>
      <input
      type="text"
      name="image"
      id="image-field"
-     value="<%= @animal.image %>"
-     />
+     value="<%= @animal.image %>"/>
+     </div>
 
-
+  <div class="form-item">
   <input type='submit' value="Update">
+  </div>
+  </div>
 </form>

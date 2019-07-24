@@ -1,6 +1,8 @@
 <form method="post" action="/rabbit-rescue/by-breed">
+  <div class="form-wrap">
 
-  <label for="breed-field">Select breed:</label>
+    <div class="form-item">
+  <label for="breed-field">Select breed:</label><br>
     <select name="breed" id="breed-field">
       <option value="Angora">Angora</option>
       <option value="Belgian Hare">Belgian Hare</option>
@@ -13,14 +15,21 @@
       <option value="Harlequin">Harlequin</option>
       <option value="Lionhead">Lionhead</option>
       <option value="Mini-lop">Mini-lop</option>
-      <option value="Netherland Dwarf">Netherland Dwarf</option>
+      <option value="Netherlands Dwarf">Netherlands Dwarf</option>
       <option value="Rex">Rex</option>
     </select>
+    </div> <br>
 
+    <div class="form-item">
   <input type='submit' value='Find by Breed'>
 </form>
+</div>
+
+<br>
 
 <%= "Sorry, there are no bunnies of this breed available." if @animals.length == 0 %>
+</div>
+
 
 <% @animals.each do |animal| %>
 <div class="item">
@@ -30,5 +39,6 @@
    <p>Breed: <%= animal.breed %></p>
    <p><a href="/rabbit-rescue/<%= animal.id %>">View Bunny</a></p>
    </div>
+
 
   <% end %>
