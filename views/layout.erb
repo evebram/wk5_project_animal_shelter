@@ -3,20 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>The Warren</title>
+    <link rel="icon" href="/images/icon.png" />
+
     <link rel="stylesheet" type="text/css" href="/styles/structure.css">
 
   </head>
-  <body>
-    <nav id="menu">
-      <li class="menu-item"><a href="/rabbit-rescue">All Bunnies</a></li>
-      <li class="menu-item"><a href="/rabbit-rescue/ready-to-adopt">Ready to Adopt</a></li>
-      <li class="menu-item"><a href="/rabbit-rescue/not-ready">Not Ready for Adoption</a></li>
-      <li class="menu-item"><a href="/rabbit-rescue/by-breed">By Breed</a></li>
-      <li class="menu-item"><a href="/rabbit-rescue/owners">Owners</a></li>
-      <li class="menu-item"><a href="/rabbit-rescue/register-bunny">Register Bunny</a></li>
-      <li class="menu-item"><a href="/rabbit-rescue/register-owner">Register Owner</a></li>
-    </nav>
 
+  <header>
+    <nav id="menu" class="header">
+      <img src="/images/logo.png" width="100px" height="100px">
+      <a href="/rabbit-rescue">All Bunnies</a>
+      <a href="/rabbit-rescue/ready-to-adopt">Ready to Adopt</a>
+      <a href="/rabbit-rescue/not-ready">Not Ready for Adoption</a>
+      <a href="/rabbit-rescue/by-breed">By Breed</a>
+      <a href="/rabbit-rescue/owners">Owners</a>
+      <a href="/rabbit-rescue/register-bunny">Register Bunny</a>
+      <a href="/rabbit-rescue/register-owner">Register Owner</a>
+
+    </nav>
+    </header>
+
+    <body>
     <%= yield %>
+
+
+
   </body>
 </html>

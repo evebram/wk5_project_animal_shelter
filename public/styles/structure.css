@@ -1,3 +1,24 @@
 html {
   background: url('/images/warren-background.png') no-repeat center center fixed;
 }
+
+header {
+  background-color: #fc9d03;
+  position: fixed;
+  width: 100%;
+  height:60px;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
+.header {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
