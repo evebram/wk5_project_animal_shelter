@@ -5,7 +5,7 @@ require('pry-byebug')
 class Animal
 
   attr_reader :id, :owner_id
-  attr_accessor :animal_name, :breed, :age, :ready_to_adopt, :admission_date, :owner_id
+  attr_accessor :animal_name, :breed, :age, :ready_to_adopt, :admission_date, :owner_id, :image
 
   def initialize(options)
     @id = options['id'].to_i
@@ -18,6 +18,7 @@ class Animal
     @admission_date = options['admission_date']
     @owner_id = options['owner_id'].to_i unless !options['owner_id'] || options['owner_id'].empty?
     #to_i does weird things to seeds.rb
+    @image = options['image']
   end
 
   def save()
