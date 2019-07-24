@@ -2,7 +2,7 @@ html {
   background: url('/images/warren-background.png') no-repeat center center fixed;
 }
 
-header {
+/* header {
   background-color: #fc9d03;
   position: fixed;
   width: 100%;
@@ -10,15 +10,24 @@ header {
   top: 0px;
   right: 0px;
   z-index: 2;
+} */
+
+ul {
+ list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  background-color: #fc9d03;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto;
+  top: 0px;
+  left: 0px;
 }
 
-.header {
-  float: left;
+
+.menu {
+  font-family: 'Open Sans Condensed', sans-serif;
   color: white;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
+  left: 5px;
 }
