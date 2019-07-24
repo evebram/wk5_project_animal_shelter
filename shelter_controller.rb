@@ -53,6 +53,13 @@ get '/rabbit-rescue/register-owner' do
   erb(:register_owner)
 end
 
+#CREATE OWNER
+post '/rabbit-rescue' do
+  @owner = Owner.new(params)
+  @owner.save()
+  erb(:create)
+end
+
 #SHOW
 get '/rabbit-rescue/:id' do
   @animal = Animal.find(params['id'])
