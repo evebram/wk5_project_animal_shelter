@@ -1,14 +1,16 @@
 <% @owners.each do |owner| %>
+<div class="item">
 
 <p>First Name: <%=owner.first_name%></p>
 <p>Last Name: <%=owner.last_name%></p>
 <p>Adopted:
-  
+
    <% owner.animals.each do |animal| %>
    <li><%= animal.animal_name %></li>
    <% end %></p>
 <form method="post" action="/rabbit-rescue/<%= owner.id %>/delete">
   <input type="submit" value="Delete Entry"/>
 </form>
+</div>
 
 <% end %>
