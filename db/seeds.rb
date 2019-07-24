@@ -157,6 +157,6 @@ animal11 = Animal.new({
   "age" => 7,
   "ready_to_adopt" => false,
   "admission_date" => '10.07.2019',
-  "image" => ('/public/images/holly.jpg')
+  "image" => ('/public/images/hollyg.jpg')
   })
 animal11.save()
