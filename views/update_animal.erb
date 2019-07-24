@@ -25,6 +25,14 @@
       <option value="Rex" <%= "selected" if @animal.breed == "Rex" %>>Rex</option>
     </select>
 
+    <label for="age-field">Age:</label>
+    <input
+    type="text"
+    name="age"
+    id="age-field"
+    value="<%= @animal.age %>"
+    />
+
   <label for="admission-date-field">Admission date:</label>
   <input
   type="text"
