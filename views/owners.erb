@@ -1,6 +1,7 @@
 <% @owners.each do |owner| %>
 
-<p>Name: <%= owner.owner_name %></p>
+<p>First Name: <%=owner.first_name%></p>
+<p>Last Name: <%=owner.last_name%></p>
 <p>Adopted: <ul>
    <% owner.animals.each do |animal| %>
    <li><%= animal.animal_name %></li>

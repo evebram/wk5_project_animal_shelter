@@ -5,12 +5,13 @@ require('pry-byebug')
 class Animal
 
   attr_reader :id, :owner_id
-  attr_accessor :animal_name, :breed, :ready_to_adopt, :admission_date, :owner_id
+  attr_accessor :animal_name, :breed, :age, :ready_to_adopt, :admission_date, :owner_id
 
   def initialize(options)
     @id = options['id'].to_i
     @animal_name = options['animal_name']
     @breed = options['breed']
+    @age = options['age']
     #how to define a boolean like this?
     @ready_to_adopt = options['ready_to_adopt']||=false
     #how to create a date in ruby?
@@ -24,16 +25,17 @@ class Animal
            (
              animal_name,
              breed,
+             age,
              ready_to_adopt,
              admission_date,
              owner_id
             )
            VALUES
            (
-             $1, $2, $3, $4, $5
+             $1, $2, $3, $4, $5, $6
              )
              RETURNING *"
-    values = [@animal_name, @breed, @ready_to_adopt, @admission_date, @owner_id]
+    values = [@animal_name, @breed, @age, @ready_to_adopt, @admission_date, @owner_id]
     animal_data = SqlRunner.run(sql, values)
     @id = animal_data.first()['id'].to_i
   end
@@ -59,14 +61,15 @@ class Animal
            SET (
              animal_name,
              breed,
+             age,
              ready_to_adopt,
              admission_date,
              owner_id
              ) = (
-               $1, $2, $3, $4, $5
+               $1, $2, $3, $4, $5, $6
                )
-              WHERE id = $6"
-    values = [@animal_name, @breed, @ready_to_adopt, @admission_date, @owner_id, @id]
+              WHERE id = $7"
+    values = [@animal_name, @breed, @age, @ready_to_adopt, @admission_date, @owner_id, @id]
     SqlRunner.run(sql, values)
   end
 

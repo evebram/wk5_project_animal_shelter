@@ -48,9 +48,9 @@
    <select name="owner_id" id="assign-owner">
      <% @owners.each do |owner| %>
        <% if owner.id == @animal.owner_id %>
-         <option value=<%= owner.id %> selected><%=owner.owner_name %></option>
+         <option value=<%= owner.id %> selected><%="#{owner.first_name} #{owner.last_name}"%></option>
        <% else %>
-         <option value=<%= owner.id %>><%= owner.owner_name %></option>
+         <option value=<%= owner.id %>><%="#{owner.first_name} #{owner.last_name}"%></option>
        <% end %>
      <% end %>
      <option value="" <%= "selected" if @animal.owner_id == nil %>>None</option>
