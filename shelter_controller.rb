@@ -31,9 +31,13 @@ get '/rabbit-rescue/not-ready' do
 end
 
 #SHOW BY BREED
-get '/rabbit-rescue/by-breed' do
+post '/rabbit-rescue/by-breed' do
   @animals = Animal.find_by_breed(params['breed'])
   erb(:breed)
+end
+
+get '/rabbit-rescue/by-breed' do
+  erb(:breed_start)
 end
 
 #NEW BUNNY

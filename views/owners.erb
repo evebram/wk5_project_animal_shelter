@@ -2,10 +2,11 @@
 
 <p>First Name: <%=owner.first_name%></p>
 <p>Last Name: <%=owner.last_name%></p>
-<p>Adopted: <ul>
+<p>Adopted:
+  
    <% owner.animals.each do |animal| %>
    <li><%= animal.animal_name %></li>
-   <% end %></ul></p>
+   <% end %></p>
 <form method="post" action="/rabbit-rescue/<%= owner.id %>/delete">
   <input type="submit" value="Delete Entry"/>
 </form>

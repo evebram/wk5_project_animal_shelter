@@ -64,6 +64,14 @@
      <option value="" <%= "selected" if @animal.owner_id == nil %>>None</option>
      </select>
 
+     <label for="image-field">Image:</label>
+     <input
+     type="text"
+     name="image"
+     id="image-field"
+     value="<%= @animal.image %>"
+     />
+
 
   <input type='submit' value="Update">
 </form>

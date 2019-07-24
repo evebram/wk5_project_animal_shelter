@@ -1,5 +1,6 @@
 require_relative('../models/owner.rb')
 require_relative('../models/animal.rb')
+require('pry-byebug')
 
 Animal.delete_all()
 Owner.delete_all()
@@ -48,7 +49,7 @@ animal01 = Animal.new({
   "ready_to_adopt" => true,
   "admission_date" => '12.07.2019',
   "owner_id" => owner1.id,
-  "image" => ('/public/images/hazel.jpg')
+  "image" => ('/images/hazel.jpg')
   })
 animal01.save()
 
@@ -59,7 +60,7 @@ animal02 = Animal.new({
   "ready_to_adopt" => true,
   "admission_date" => '05.06.2019',
   "owner_id" => owner1.id,
-  "image" => ('/public/images/fiver.jpg')
+  "image" => ('/images/fiver.jpg')
   })
 animal02.save()
 
@@ -69,7 +70,7 @@ animal03 = Animal.new({
   "age" => 3,
   "ready_to_adopt" => false,
   "admission_date" => '06.05.2019',
-  "image" => ('/public/images/bigwig.jpg')
+  "image" => ('/images/bigwig.jpg')
   })
 animal03.save()
 
@@ -80,7 +81,7 @@ animal04 = Animal.new({
   "ready_to_adopt" => true,
   "admission_date" => '28.03.2019',
   "owner_id" => owner3.id,
-  "image" => ('/public/images/silver.jpg')
+  "image" => ('/images/silver.jpg')
 
   })
 animal04.save()
@@ -92,7 +93,7 @@ animal05 = Animal.new({
   "ready_to_adopt" => true,
   "admission_date" => '28.03.2019',
   "owner_id" => owner5.id,
-  "image" => ('/public/images/blackberry.jpg')
+  "image" => ('/images/blackberry.jpg')
 
   })
 animal05.save()
@@ -104,7 +105,7 @@ animal06 = Animal.new({
   "ready_to_adopt" => true,
   "admission_date" => '15.04.2019',
   "owner_id" => owner2.id,
-  "image" => ('/public/images/dandelion.jpg')
+  "image" => ('/images/dandelion.jpg')
 
   })
 animal06.save()
@@ -115,7 +116,7 @@ animal07 = Animal.new({
   "age" => 1,
   "ready_to_adopt" => true,
   "admission_date" => '21.05.2019',
-  "image" => ('/public/images/pipkin.jpg')
+  "image" => ('/images/pipkin.jpg')
 
   })
 animal07.save()
@@ -126,7 +127,7 @@ animal08 = Animal.new({
   "age" => 6,
   "ready_to_adopt" => false,
   "admission_date" => '01.06.2019',
-  "image" => ('/public/images/buckthorn.jpg')
+  "image" => ('/images/buckthorn.jpg')
 
   })
 animal08.save()
@@ -137,7 +138,7 @@ animal09 = Animal.new({
   "age" => 7,
   "ready_to_adopt" => false,
   "admission_date" => '25.05.2019',
-  "image" => ('/public/images/strawberry.jpg')
+  "image" => ('/images/strawberry.jpg')
   })
 animal09.save()
 
@@ -147,7 +148,7 @@ animal10 = Animal.new({
   "age" => 10,
   "ready_to_adopt" => true,
   "admission_date" => '15.06.2019',
-  "image" => ('/public/images/hawkbit.jpg')
+  "image" => ('/images/hawkbit.jpg')
   })
 animal10.save()
 
@@ -157,6 +158,6 @@ animal11 = Animal.new({
   "age" => 7,
   "ready_to_adopt" => false,
   "admission_date" => '10.07.2019',
-  "image" => ('/public/images/hollyg.jpg')
+  "image" => ('/images/holly.jpg')
   })
 animal11.save()

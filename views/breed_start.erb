@@ -20,12 +20,4 @@
   <input type='submit' value='Find by Breed'>
 </form>
 
-<%= "Sorry, there are no bunnies of this breed available." if @animals.length == 0 %>
-
-<% @animals.each do |animal| %>
-   <p>Name: <%= animal.animal_name %></p>
-   <p>Breed: <%= animal.breed %></p>
-   <p><a href="/rabbit-rescue/<%= animal.id %>">View Bunny</a></p>
-
-  <% end %>
    <hr />
