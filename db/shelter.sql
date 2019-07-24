@@ -14,5 +14,6 @@ CREATE TABLE animals(
   age INT4,
   ready_to_adopt BOOLEAN,
   admission_date VARCHAR(255),
-  owner_id INT4 REFERENCES owners(id) ON DELETE CASCADE
+  owner_id INT4 REFERENCES owners(id) ON DELETE CASCADE,
+  image VARCHAR(255)
 );
